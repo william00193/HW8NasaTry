@@ -13,11 +13,11 @@ class SecondActivity : AppCompatActivity() {
 
 
 
-        val image_url = intent.getStringExtra("url_s")
+        val image_url = intent.getStringExtra("webformatURL")
         val imageView = findViewById<ImageView>(R.id.imageViewNew)
         Glide.with(this).load(image_url).into(imageView)
 
-        val title = intent.getStringExtra("title")
+        val title = intent.getStringExtra("tags")
         val textView = findViewById<TextView>(R.id.textViewNew)
         textView.text = title
     }

@@ -7,8 +7,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.*
 import androidx.recyclerview.widget.DiffUtil
+
+import com.example.myapplication.PhotoRepository
 import com.example.myapplication.api.FlickrAPI
 import com.example.myapplication.api.GalleryItem
+
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -27,11 +30,15 @@ private const val TAG = "PhotoGalleryViewModel"
 class PhotoGalleryViewModel: ViewModel() {
 
     private val flickrApi: FlickrAPI = Retrofit.Builder()
-        .baseUrl("https://api.flickr.com/")
+
+//Flickr Version
+//        .baseUrl("https://api.flickr.com/")
+
+
+        .baseUrl("  https://pixabay.com/")
 
 
 
-//      .baseUrl("https://pixabay.com/")
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
         .create(FlickrAPI::class.java)

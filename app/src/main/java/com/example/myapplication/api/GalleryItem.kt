@@ -6,21 +6,44 @@ import com.squareup.moshi.JsonClass
 
 
 //Flickr GalleryItem
+//@JsonClass(generateAdapter = true)
+//data class GalleryItem(
+//    val title: String,
+//    val id: String,
+//    @Json(name = "url_s") val url: String,
+//)
+
+
 @JsonClass(generateAdapter = true)
 data class GalleryItem(
-    val title: String,
-    val id: String,
-    @Json(name = "url_s") val url: String,
+ val id: Int,
+ val pageURL: String,
+ val type: String,
+ val tags: String,
+ val previewURL: String,
+ val previewWidth: Int,
+ val previewHeight: Int,
+
+ //What im going to be using for displaying the image in the recycler view
+ @Json(name = "webformatURL") val url : String,
+ val webformatWidth: Int,
+ val webformatHeight: Int,
+ val largeImageURL: String,
+ val imageWidth: Int,
+ val imageHeight: Int,
+ val imageSize: Int,
+ val views: Int,
+ val downloads: Int,
+ val collections: Int,
+ val likes: Int,
+ val comments: Int,
+ val user_id: Int,
+ val user: String,
+ val userImageURL: String,
 )
 
-//A resource is failing to call close when application is launched
 
-
-
-//Pixabay GalleryItem, rewrite this code section to bring back necessary pixabay fields
-//Call this data class GalleryItem
-
-
+//A more watered down version of GalleryItem if I can get away with referencing less attributes
 //@JsonClass(generateAdapter = true)
 //data class GalleryItem(
 //    val id: Int,

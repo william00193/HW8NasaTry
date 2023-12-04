@@ -10,9 +10,8 @@ import androidx.paging.*
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.myapplication.api.FlickrResponse
+import com.example.myapplication.SecondActivity
 import com.example.myapplication.api.GalleryItem
-import com.example.myapplication.api.PhotoResponse
 import com.example.myapplication.databinding.ActivitySecondBinding
 import com.example.myapplication.databinding.ListItemGalleryBinding
 import kotlinx.coroutines.flow.Flow
@@ -24,10 +23,11 @@ class PhotoViewHolder(
     fun bind(galleryItem: GalleryItem) {
 
 
-        //For Flickr
+//For Flickr
 //        binding.itemImageView.load(galleryItem.url)
 
-        //For Pixabay
+
+//For Pixabay
       binding.itemImageView.load(galleryItem.url)
 
 
@@ -37,21 +37,28 @@ class PhotoViewHolder(
 
 
             val intent = Intent(binding.root.context, SecondActivity::class.java)
-            intent.putExtra("url_s", galleryItem.url)
-            intent.putExtra("title", galleryItem.title)
+            intent.putExtra("webformatURL", galleryItem.url)
+            intent.putExtra("tags", galleryItem.tags)
 
             binding.root.context.startActivity(intent)
+
+//For Flickr
+//            val intent = Intent(binding.root.context, SecondActivity::class.java)
+//            intent.putExtra("url_s", galleryItem.url)
+//            intent.putExtra("title", galleryItem.title)
+//
+//            binding.root.context.startActivity(intent)
 
 
 
 //Toast for Flickr
             Toast.makeText(
                 binding.root.context,
-                "${galleryItem.title}",
+                "${galleryItem.tags}",
                 Toast.LENGTH_SHORT
             ).show()
 
-//For Pixaaby
+//For Pixabay
 //            Toast.makeText(
 //                binding.root.context,
 //                "${galleryItem.tags}",

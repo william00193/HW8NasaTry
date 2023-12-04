@@ -13,6 +13,7 @@ import androidx.paging.*
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.myapplication.api.GalleryItem
+
 import com.example.myapplication.databinding.FragmentPhotoGalleryBinding
 import com.example.myapplication.databinding.ListItemGalleryBinding
 import kotlinx.coroutines.launch
@@ -47,6 +48,7 @@ class PhotoGalleryFragment : Fragment() {
                     photoListAdapter.submitData(pagingData)
                 }
             }
+        
         }
     }
 
