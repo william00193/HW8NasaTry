@@ -1,14 +1,11 @@
 package com.example.myapplication.api
 
-import androidx.paging.PagedList
-import com.example.myapplication.PhotoRepository
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import android.widget.Toast
 import retrofit2.http.GET
 
 private const val API_KEY = "38966820aba3820d74f6b3121335fe3d"
 
-interface FlickrAPI {
+interface NASAApi {
 
 //For Flickr
 //    @GET(
@@ -20,6 +17,9 @@ interface FlickrAPI {
 //                "&nojsoncallback=1" +
 //                "&extras=url_s"
 //    )
+
+
+
 
 
 //For NASA
@@ -38,9 +38,15 @@ interface FlickrAPI {
 //    )
 
 
-suspend fun fetchPhotos(): FlickrResponse
+suspend fun fetchPhotos(): NASAResponse
+
+
+
+
 
 }
+
+
 
 
 //https://api.nasa.gov/planetary/apod?api_key=a5Qn5reNAPxJFWmzLCJ5S3RlvkUvqcl0qdg8mvgI&count=100

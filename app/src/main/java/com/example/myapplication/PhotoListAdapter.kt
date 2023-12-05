@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.provider.ContactsContract
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -16,7 +17,7 @@ import com.example.myapplication.databinding.ActivitySecondBinding
 import com.example.myapplication.databinding.ListItemGalleryBinding
 import kotlinx.coroutines.flow.Flow
 
-
+private const val TAG = "PhotoGalleryFragment"
 class PhotoViewHolder(
      private val binding: ListItemGalleryBinding
 ) : RecyclerView.ViewHolder(binding.root) {
@@ -24,13 +25,10 @@ class PhotoViewHolder(
 
 
 
-
-
 //For Pixabay/Flickr/NASA
       binding.itemImageView.load(galleryItem.url)
 
-
-
+        
         binding.root.setOnClickListener {
 
 //For NASA
@@ -38,7 +36,9 @@ class PhotoViewHolder(
             intent.putExtra("hdurl", galleryItem.url)
             intent.putExtra("title", galleryItem.title)
 
+
             binding.root.context.startActivity(intent)
+
 
 //For Flickr
 //            val intent = Intent(binding.root.context, SecondActivity::class.java)

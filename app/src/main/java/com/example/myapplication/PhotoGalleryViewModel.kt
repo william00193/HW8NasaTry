@@ -9,8 +9,8 @@ import androidx.paging.*
 import androidx.recyclerview.widget.DiffUtil
 
 import com.example.myapplication.PhotoRepository
-import com.example.myapplication.api.FlickrAPI
 import com.example.myapplication.api.GalleryItem
+import com.example.myapplication.api.NASAApi
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -29,9 +29,7 @@ private const val TAG = "PhotoGalleryViewModel"
 
 class PhotoGalleryViewModel: ViewModel() {
 
-    private val flickrApi: FlickrAPI = Retrofit.Builder()
-
-
+    private val nasaApi: NASAApi = Retrofit.Builder()
 
 
 //Flickr Version
@@ -45,13 +43,12 @@ class PhotoGalleryViewModel: ViewModel() {
 //NASA Version
         .baseUrl("https://api.nasa.gov/")
 
-
-
-
-
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
-        .create(FlickrAPI::class.java)
+        .create(NASAApi::class.java)
+
+
+
 
     fun getPhotos(): Flow<PagingData<GalleryItem>> {
         return Pager(
@@ -59,7 +56,7 @@ class PhotoGalleryViewModel: ViewModel() {
                 pageSize = 100,
                 enablePlaceholders = true
             ),
-            pagingSourceFactory = { PhotoRepository.PhotoPagingSource(flickrApi) }
+            pagingSourceFactory = { PhotoRepository.PhotoPagingSource(nasaApi) }
         ).flow
 
     }

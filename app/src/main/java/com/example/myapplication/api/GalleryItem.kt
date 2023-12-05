@@ -17,7 +17,6 @@ import com.squareup.moshi.JsonClass
 //For NASA
 @JsonClass(generateAdapter = true)
 data class GalleryItem(
- val copyright: String,
  val date: String,
  val explanation: String,
  @Json(name = "hdurl") val url: String,
@@ -26,6 +25,10 @@ data class GalleryItem(
  val title: String,
  @Json(name = "url") val url2: String,
 )
+
+
+
+
 
 
 //@JsonClass(generateAdapter = true)
