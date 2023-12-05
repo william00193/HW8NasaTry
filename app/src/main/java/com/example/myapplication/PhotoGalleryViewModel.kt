@@ -31,11 +31,21 @@ class PhotoGalleryViewModel: ViewModel() {
 
     private val flickrApi: FlickrAPI = Retrofit.Builder()
 
+
+
+
 //Flickr Version
 //        .baseUrl("https://api.flickr.com/")
 
 
-        .baseUrl("  https://pixabay.com/")
+//Pixabay Version
+//        .baseUrl("https://pixabay.com/")
+
+
+//NASA Version
+        .baseUrl("https://api.nasa.gov/")
+
+
 
 
 

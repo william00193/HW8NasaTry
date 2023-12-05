@@ -23,22 +23,20 @@ class PhotoViewHolder(
     fun bind(galleryItem: GalleryItem) {
 
 
-//For Flickr
-//        binding.itemImageView.load(galleryItem.url)
 
 
-//For Pixabay
+
+//For Pixabay/Flickr/NASA
       binding.itemImageView.load(galleryItem.url)
-
 
 
 
         binding.root.setOnClickListener {
 
-
+//For NASA
             val intent = Intent(binding.root.context, SecondActivity::class.java)
-            intent.putExtra("webformatURL", galleryItem.url)
-            intent.putExtra("tags", galleryItem.tags)
+            intent.putExtra("hdurl", galleryItem.url)
+            intent.putExtra("title", galleryItem.title)
 
             binding.root.context.startActivity(intent)
 
@@ -51,10 +49,10 @@ class PhotoViewHolder(
 
 
 
-//Toast for Flickr
+//Toast for NASA & FLickR
             Toast.makeText(
                 binding.root.context,
-                "${galleryItem.tags}",
+                "${galleryItem.title}",
                 Toast.LENGTH_SHORT
             ).show()
 

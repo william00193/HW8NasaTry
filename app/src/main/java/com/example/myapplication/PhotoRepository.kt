@@ -26,7 +26,7 @@ class PhotoRepository(private val flickrApi: FlickrAPI) {
             try {
                 val page = params.key ?: 1
                 val response = flickrApi.fetchPhotos()
-                val photos = response.photos.galleryItems
+                val photos = response.new.galleryItems
 
                 val prevKey = if (page > 1) page - 1 else null
                 val nextKey = if (photos.isNotEmpty()) page + 1 else null

@@ -70,12 +70,12 @@ class PhotoGalleryFragment : Fragment() {
 
     object PHOTO_COMPARATOR : DiffUtil.ItemCallback<GalleryItem>() {
         override fun areItemsTheSame(oldItem: GalleryItem, newItem: GalleryItem): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.date == newItem.date
 
         }
 
         override fun areContentsTheSame(oldItem: GalleryItem, newItem: GalleryItem): Boolean {
-            return oldItem == newItem
+            return oldItem.date == newItem.date
         }
 
     }
