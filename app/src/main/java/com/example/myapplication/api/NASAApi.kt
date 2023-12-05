@@ -19,9 +19,6 @@ interface NASAApi {
 //    )
 
 
-
-
-
 //For NASA
 @GET("planetary/apod" +
         "?api_key=a5Qn5reNAPxJFWmzLCJ5S3RlvkUvqcl0qdg8mvgI" +
@@ -39,9 +36,6 @@ interface NASAApi {
 
 
 suspend fun fetchPhotos(): NASAResponse
-
-
-
 
 
 }

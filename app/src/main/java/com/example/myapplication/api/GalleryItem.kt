@@ -30,7 +30,7 @@ data class GalleryItem(
 
 
 
-
+//Pixabay GalleryItem
 //@JsonClass(generateAdapter = true)
 //data class GalleryItem(
 // val id: Int,
@@ -40,7 +40,7 @@ data class GalleryItem(
 // val previewURL: String,
 // val previewWidth: Int,
 // val previewHeight: Int,
-//
+
 // //What im going to be using for displaying the image in the recycler view
 // @Json(name = "webformatURL") val url : String,
 // val webformatWidth: Int,

@@ -18,6 +18,8 @@ import com.example.myapplication.databinding.ListItemGalleryBinding
 import kotlinx.coroutines.flow.Flow
 
 private const val TAG = "PhotoGalleryFragment"
+
+
 class PhotoViewHolder(
      private val binding: ListItemGalleryBinding
 ) : RecyclerView.ViewHolder(binding.root) {
@@ -27,6 +29,13 @@ class PhotoViewHolder(
 
 //For Pixabay/Flickr/NASA
       binding.itemImageView.load(galleryItem.url)
+
+//   Small test
+        if (galleryItem == null) {
+            Log.d(TAG, "galleryItem is null")
+        } else {
+            Log.d(TAG, "galleryItem is not null")
+        }
 
         
         binding.root.setOnClickListener {
