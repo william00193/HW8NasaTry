@@ -22,7 +22,7 @@ class PhotoRepository(private val nasaApi: NASAApi) {
             try {
                 val page = params.key ?: 1
                 val response = nasaApi.fetchPhotos()
-                val photos = response.new.galleryItems
+                val photos = response.photos.galleryItems
 
 
                 if (photos.isEmpty()) {
@@ -40,12 +40,15 @@ class PhotoRepository(private val nasaApi: NASAApi) {
             } catch (e: Exception) {
                 return LoadResult.Error(e)
             }
+
+
         }
 
         override fun getRefreshKey(state: PagingState<Int, GalleryItem>): Int? {
             return state.anchorPosition?.let { anchorPosition ->
                 val anchorPage = state.closestPageToPosition(anchorPosition)
                 anchorPage?.prevKey?.plus(1) ?: anchorPage?.nextKey?.minus(1)
+
 
             }
         }

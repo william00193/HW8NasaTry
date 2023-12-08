@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.util.Log
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.compose.ui.input.key.Key.Companion.Refresh
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.*
@@ -32,16 +33,8 @@ class PhotoGalleryViewModel: ViewModel() {
     private val nasaApi: NASAApi = Retrofit.Builder()
 
 
-//Flickr Version
-//        .baseUrl("https://api.flickr.com/")
-
-
-//Pixabay Version
-//        .baseUrl("https://pixabay.com/")
-
-
 //NASA Version
-        .baseUrl("https://api.nasa.gov/")
+        .baseUrl("https://api.nasa.gov/planetary/")
 
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
@@ -58,6 +51,8 @@ class PhotoGalleryViewModel: ViewModel() {
             ),
             pagingSourceFactory = { PhotoRepository.PhotoPagingSource(nasaApi) }
         ).flow
+
+
 
     }
 }

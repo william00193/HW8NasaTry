@@ -51,7 +51,6 @@ class PhotoGalleryFragment : Fragment() {
                     photoListAdapter.submitData(pagingData)
                 }
             }
-        
         }
     }
 
@@ -60,7 +59,6 @@ class PhotoGalleryFragment : Fragment() {
             val binding =
                 ListItemGalleryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             return PhotoViewHolder(binding)
-
         }
 
         override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {

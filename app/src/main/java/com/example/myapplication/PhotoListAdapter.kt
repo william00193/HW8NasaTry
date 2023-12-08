@@ -31,11 +31,7 @@ class PhotoViewHolder(
       binding.itemImageView.load(galleryItem.url)
 
 //   Small test
-        if (galleryItem == null) {
-            Log.d(TAG, "galleryItem is null")
-        } else {
-            Log.d(TAG, "galleryItem is not null")
-        }
+        Log.d(TAG, "galleryItem is not null")
 
         
         binding.root.setOnClickListener {
@@ -49,15 +45,6 @@ class PhotoViewHolder(
             binding.root.context.startActivity(intent)
 
 
-//For Flickr
-//            val intent = Intent(binding.root.context, SecondActivity::class.java)
-//            intent.putExtra("url_s", galleryItem.url)
-//            intent.putExtra("title", galleryItem.title)
-//
-//            binding.root.context.startActivity(intent)
-
-
-
 //Toast for NASA & FLickR
             Toast.makeText(
                 binding.root.context,
@@ -65,12 +52,7 @@ class PhotoViewHolder(
                 Toast.LENGTH_SHORT
             ).show()
 
-//For Pixabay
-//            Toast.makeText(
-//                binding.root.context,
-//                "${galleryItem.tags}",
-//                Toast.LENGTH_SHORT
-//            ).show()
+
         }
 
 

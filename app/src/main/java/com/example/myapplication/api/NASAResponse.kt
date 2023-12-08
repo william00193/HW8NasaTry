@@ -6,9 +6,8 @@ import com.squareup.moshi.JsonClass
 
 
 
+//For NASA
 @JsonClass(generateAdapter = true)
 data class NASAResponse(
-   val new: PhotoResponse
-
+   val photos: List<PhotoResponse>
 )
-
