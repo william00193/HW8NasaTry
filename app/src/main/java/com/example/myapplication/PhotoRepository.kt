@@ -22,7 +22,7 @@ class PhotoRepository(private val nasaApi: NASAApi) {
             try {
                 val page = params.key ?: 1
                 val response = nasaApi.fetchPhotos()
-                val photos = response.photos.galleryItems
+                val photos = nasaApi.fetchPhotos()
 
 
                 if (photos.isEmpty()) {

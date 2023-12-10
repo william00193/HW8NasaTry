@@ -49,6 +49,7 @@ class PhotoGalleryFragment : Fragment() {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 photoGalleryViewModel.getPhotos().collect { pagingData ->
                     photoListAdapter.submitData(pagingData)
+
                 }
             }
         }

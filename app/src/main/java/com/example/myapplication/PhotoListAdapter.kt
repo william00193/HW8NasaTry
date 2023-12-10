@@ -30,10 +30,8 @@ class PhotoViewHolder(
 //For Pixabay/Flickr/NASA
       binding.itemImageView.load(galleryItem.url)
 
-//   Small test
-        Log.d(TAG, "galleryItem is not null")
 
-        
+
         binding.root.setOnClickListener {
 
 //For NASA

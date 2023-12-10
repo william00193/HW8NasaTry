@@ -48,6 +48,7 @@ class PhotoGalleryViewModel: ViewModel() {
             config = PagingConfig(
                 pageSize = 100,
                 enablePlaceholders = true
+
             ),
             pagingSourceFactory = { PhotoRepository.PhotoPagingSource(nasaApi) }
         ).flow

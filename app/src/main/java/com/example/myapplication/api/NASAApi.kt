@@ -16,7 +16,6 @@ interface NASAApi {
 
 suspend fun fetchPhotos(): List<GalleryItem>
 
-
 }
 
 

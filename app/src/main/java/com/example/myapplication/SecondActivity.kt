@@ -20,5 +20,6 @@ class SecondActivity : AppCompatActivity() {
         val title = intent.getStringExtra("title")
         val textView = findViewById<TextView>(R.id.textViewNew)
         textView.text = title
+
     }
 }

@@ -9,7 +9,9 @@ import com.squareup.moshi.JsonClass
 //For NASA
 @JsonClass(generateAdapter = true)
 data class PhotoResponse(
+
      val galleryItems: List<GalleryItem>
+
 )
 
 
